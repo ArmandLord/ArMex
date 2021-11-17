@@ -2,15 +2,10 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define("player", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
-    },
     nickname: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
     status: {
       type: DataTypes.ENUM("oro", "plata", "bronce"),

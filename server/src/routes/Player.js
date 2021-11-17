@@ -2,19 +2,25 @@ const { Router } = require("express");
 
 const router = Router();
 
-// const {
-//   getUsers,
-//   deleteOneUser,
-//   banOneUser,
-//   updateOneUser,
-//   promoteToAdmin
-// } = require("../controllers/User");
+const {
+    createPlayers,
+    createOnePlayer,
+    updatePlayer,
+    deletePlayer,
+    getPlayers,
+    getPlayerById,
+    getTopTen
+} = require("../controllers/Player");
 
 
-// router.get("/", getUsers);
-// router.delete("/:id", deleteOneUser);
-// router.put("/:id/:status", banOneUser);
-// router.put("/updateuser", updateOneUser);
-// router.put("/admin/:admin/:id", promoteToAdmin )
+router.post("/", createPlayers);
+router.post("/onePlayer", createOnePlayer);
+router.put("/", updatePlayer);
+router.delete("/", deletePlayer);
+router.get("/", getPlayers);
+router.get("/:id", getPlayerById);
+router.get("/topTen", getTopTen);
+
+
 
 module.exports = router;
