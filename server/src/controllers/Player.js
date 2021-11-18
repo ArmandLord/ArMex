@@ -54,11 +54,11 @@ const updatePlayer = async (req, res) => {
 };
 
 const deletePlayer = async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
   try {
     await Player.destroy({
-      where: { id },
+      where: { id: parseInt(id) },
     });
 
     res.status(200).send("Player successfuly deleted.");

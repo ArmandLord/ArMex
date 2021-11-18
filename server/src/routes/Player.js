@@ -18,7 +18,7 @@ router.post("/onePlayer", createOnePlayer);
 
 router.put("/", updatePlayer);
 
-router.delete("/", deletePlayer);
+router.delete("/:id", deletePlayer);
 
 router.get("/", getPlayers);
 router.get("/topTen", getTopTen);

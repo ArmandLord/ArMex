@@ -17,7 +17,7 @@ function App() {
               <Route exact path="/" element={<Home/>} />  
               <Route path="/player/:id" element={<PlayerDetail/>} />  
               <Route path="/createPlayer" element={<CreateForm/>} />  
-              <Route path="/editPlayer" element={<EditForm/>} />  
+              <Route path="/editPlayer/:id" element={<EditForm/>} />  
               <Route path="/hallOfFame" element={<HallOfFame/>} />  
               <Route path="/about" element={<About/>} />  
               <Route path="*" element={<NotFound/>} />  
