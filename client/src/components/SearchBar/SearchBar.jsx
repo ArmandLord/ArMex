@@ -1,7 +1,7 @@
 import { FcSearch } from 'react-icons/fc'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getFeat } from '../../redux/actions'
+import { getFeat, getAllPlayers } from '../../redux/actions'
 
 const SearchBar = () => {
     const [search, setSearch] = useState('')
@@ -17,12 +17,17 @@ const SearchBar = () => {
         dispatch(getFeat(search))
     }
 
+    const handleClick = () => {
+        dispatch(getAllPlayers())
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <input placeholder='Search' onChange={handleChange} value={search} type="text" />
                 <button type="submit"><FcSearch/></button>
             </form>
+            <button onClick={handleClick}>refresh</button>
         </div>
     )
 }

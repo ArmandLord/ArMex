@@ -22,7 +22,7 @@ router.delete("/", deletePlayer);
 
 router.get("/", getPlayers);
 router.get("/topTen", getTopTen);
-router.get("/search/:search",searchPlayer)
+router.get("/search/:search", searchPlayer)
 router.get("/:id", getPlayerById);
 
 module.exports = router;
