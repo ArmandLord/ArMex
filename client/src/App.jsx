@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { GlobalStyles } from './GlobalStyles/GlobalStyles';
-import { Home } from './Pages'
+import { Home, PlayerDetail, NotFound, HallOfFame, About } from './Pages'
 import store from './redux/store';
 
 
@@ -12,7 +12,11 @@ function App() {
       <Router>
           <GlobalStyles />
           <Routes>
-              <Route path="/" element={<Home/>} />  
+              <Route exact path="/" element={<Home/>} />  
+              <Route path="/player/:id" element={<PlayerDetail/>} />  
+              <Route path="/hallOfFame" element={<HallOfFame/>} />  
+              <Route path="/about" element={<About/>} />  
+              <Route path="*" element={<NotFound/>} />  
           </Routes> 
       </Router>
     </Provider>
