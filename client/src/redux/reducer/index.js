@@ -5,6 +5,7 @@ const dataInitial = {
   renderingPlayers: [],
   player: {},
   topTen: [],
+  loading: true,
 };
 
 export default function charactersReducer(
@@ -17,6 +18,7 @@ export default function charactersReducer(
         ...state,
         players: payload, //reset filters, 3000 players
         renderingPlayers: payload,
+        loading: false,
       };
     case GET_BY_ID:
       return {
@@ -32,6 +34,7 @@ export default function charactersReducer(
       return {
         ...state,
         renderingPlayers: payload, //checar el back, como entrega el payload
+        loading: false,
       };
     default:
       return state;

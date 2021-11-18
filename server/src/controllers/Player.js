@@ -141,7 +141,8 @@ const searchPlayer = async (req,res) =>{
     const playersStatus = await Player.findAll({
       where:{
         status: search
-      }
+      },
+      order: [["ranking", "ASC"]]
     })
     return res.status(200).json(playersStatus)
   }
