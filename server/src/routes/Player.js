@@ -10,6 +10,7 @@ const {
   getPlayers,
   getPlayerById,
   getTopTen,
+  searchPlayer,
 } = require("../controllers/Player");
 
 router.post("/", createPlayers);
@@ -21,6 +22,7 @@ router.delete("/", deletePlayer);
 
 router.get("/", getPlayers);
 router.get("/topTen", getTopTen);
+router.get("/search/:search",searchPlayer)
 router.get("/:id", getPlayerById);
 
 module.exports = router;

@@ -130,6 +130,32 @@ const getTopTen = async (req, res) => {
   }
 };
 
+const searchPlayer = async (req,res) =>{
+  const {search} = req.params;
+  //const id = parseInt(search)
+  if(!isNaN(search)){
+    const player = await Player.findByPk(parseInt(search))
+    return res.status(200).json([player])
+  }
+  if(search === "oro" || search === "bronce" || search === "plata"){
+    const playersStatus = await Player.findAll({
+      where:{
+        status: search
+      }
+    })
+    return res.status(200).json(playersStatus)
+  }
+
+
+  const players = await Player.findAll({
+   where:{
+    nickname : search
+    }
+  })
+  return res.status(200).json(players)
+
+};
+
 module.exports = {
   createPlayers,
   createOnePlayer,
@@ -138,4 +164,5 @@ module.exports = {
   getPlayers,
   getPlayerById,
   getTopTen,
+  searchPlayer
 };
