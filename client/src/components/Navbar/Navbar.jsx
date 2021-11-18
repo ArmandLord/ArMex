@@ -44,6 +44,9 @@ const Navbar = () => {
                             <NavLinks to='/hallOfFame'>Hall Of Fame<NavHr/></NavLinks>
                         </NavItem>
                         <NavItem>
+                            <NavLinks to='/createPlayer'>Create Player<NavHr/></NavLinks>
+                        </NavItem>
+                        <NavItem>
                             <NavLinks to='/About'>about<NavHr/></NavLinks>
                         </NavItem>
                         {/* <NavItem>
