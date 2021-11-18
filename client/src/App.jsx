@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { GlobalStyles } from './GlobalStyles/GlobalStyles';
 import { Home, PlayerDetail, NotFound, HallOfFame, About } from './Pages'
 import store from './redux/store';
+import { Navbar } from './components'
 
 
 
@@ -11,6 +12,7 @@ function App() {
     <Provider store={store}>
       <Router>
           <GlobalStyles />
+          <Navbar />
           <Routes>
               <Route exact path="/" element={<Home/>} />  
               <Route path="/player/:id" element={<PlayerDetail/>} />  

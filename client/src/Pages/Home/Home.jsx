@@ -20,7 +20,7 @@ const Home = () => {
                 playersSlice?.map(player => (
                 <div key={player.id}>
                     <div ><Link to={`/player/${player.id}`}>{player.nickname}</Link></div>
-                    <img src={player.avatar} alt="sda"/>                
+                    <img style={{width: '300px'}} src={player.avatar} alt="sda"/>                
                 </div> ))
            }
         </div>
