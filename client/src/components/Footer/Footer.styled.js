@@ -11,7 +11,7 @@ export const ContainerFooter = styled.footer`
     display: flex; 
     align-items: center;
     justify-content: center;
-    background: pink;
+    background: rgb(241, 243, 240);
     /* background: ${p => p.theme.color}; */
     
     position: fixed;

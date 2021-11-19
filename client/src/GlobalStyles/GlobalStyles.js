@@ -22,9 +22,12 @@ export const Container = styled.div`
     margin-left: auto;
     padding-right: 50px; 
     padding-left: 50px;
+    
        
     @media screen and (max-width: 960px){
         padding-right: 20px; 
         padding-left: 20px;
     }
 `
+
+export const colorVariables = 'linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);'

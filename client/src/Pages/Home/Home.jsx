@@ -3,16 +3,22 @@ import { getAllPlayers } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchBar, FilteredStatus, CardHome } from "../../components";
 import { HomeContainer, JustifyHome } from "./Home.styled";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
   const players = useSelector((state) => state.renderingPlayers);
   const loading = useSelector((state) => state.loading);
   const playersSlice = players?.slice(0, 10);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     dispatch(getAllPlayers());
   }, [dispatch]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <HomeContainer>
@@ -20,7 +26,7 @@ const Home = () => {
         <SearchBar />
         <FilteredStatus />
         {loading ? (
-          <h1>Loading...</h1>
+          <h1>Loading...</h1> //cambiar por componente
         ) : playersSlice.length !== 0 && !playersSlice.includes(null) ? (
           playersSlice.map((player, i) => (
             <CardHome
@@ -33,7 +39,7 @@ const Home = () => {
             />
           ))
         ) : (
-          <div>Player not found</div>
+          <div>Player not found</div> //cambiar por componente
         )}
       </JustifyHome>
     </HomeContainer>
