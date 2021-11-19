@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { getAllPlayers } from "../../redux/actions";
 import { useDispatch } from "react-redux";
+import { CardHomeContainer, IconDelete, Avatar, LinkNickname } from './CardHome.styled'
 
 const CardHome = ({ranking, id, nickname, status, avatar}) => {
     
@@ -14,14 +14,14 @@ const CardHome = ({ranking, id, nickname, status, avatar}) => {
     
 
     return (
-        <div key={id}>
-            <button onClick={() => handleDelete(id)}>X</button>
-            <h2>{id}</h2>
-            <h2>{ranking}</h2>
-            <Link to={`/player/${id}`}><h2>{nickname}</h2></Link>
-            <h2>{status}</h2>
-            <img style={{width: '300px'}} src={avatar} alt="sda"/>
-        </div>
+        <CardHomeContainer status={status} key={id}>
+            <Avatar src={avatar} alt={nickname}/>
+            <LinkNickname to={`/player/${id}`}><h3>{nickname}</h3></LinkNickname>
+            <h4>Id Card: {id}</h4>
+            <h4>Ranking: {ranking}</h4>
+            <h4>Rarity: {status}</h4>
+            <button onClick={() => handleDelete(id)}><IconDelete/></button>
+        </CardHomeContainer>
     )
 }
 

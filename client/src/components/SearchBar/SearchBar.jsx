@@ -1,7 +1,7 @@
-import { FcSearch } from 'react-icons/fc'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getFeat, getAllPlayers } from '../../redux/actions'
+import { SearchBarContainer, SearchIcon } from './SearchBar.styled'
 
 const SearchBar = () => {
     const [search, setSearch] = useState('')
@@ -22,13 +22,13 @@ const SearchBar = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <>
+            <SearchBarContainer onSubmit={handleSubmit}>
+                <button type="submit"><SearchIcon/></button>
                 <input placeholder='Search' onChange={handleChange} value={search} type="text" />
-                <button type="submit"><FcSearch/></button>
-            </form>
+            </SearchBarContainer>
             <button onClick={handleClick}>refresh</button>
-        </div>
+        </>
     )
 }
 
