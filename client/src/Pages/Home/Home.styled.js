@@ -9,7 +9,26 @@ export const HomeContainer = styled.div`
 
 export const JustifyHome = styled(Container)`
     /* background: blue; */
+`
+
+export const ContainerCards = styled.div`
+    /* background: #fff; */
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
-    
+    padding-bottom: 30px;
+    @media (max-width: 1199px) {
+        justify-content: center;
+    }
+`
+
+export const ContainerSearch = styled.div`
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background: #fff; */
 `
