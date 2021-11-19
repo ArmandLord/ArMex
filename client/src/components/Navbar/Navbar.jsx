@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
-import { FaHamburger, FaTimes } from 'react-icons/fa'
 import { 
     Nav, 
     NavbarContainer, 
-    NavLogo, 
-    // NavIconLeft,
-    // NavIconRight,
+    NavLogo,
     MobileIcon,
     NavMenu,
     NavItem,
     NavLinks,
-    NavHr,
-    // NavItemBtn,
-    // NavItemBtnIcon1
+    MenuFootIcon,
+    MenuXIcon
  } from './Navbar.styled'
 
 const Navbar = () => {
@@ -24,35 +20,25 @@ const Navbar = () => {
         <>
            <Nav>
                 <NavbarContainer>
-                    {/* {logo ? */}
-                        <NavLogo to='/' onMouseOver={() => setLogo(!logo)} onMouseOut={() => setLogo(true)}>
-                            ArMex
-                        </NavLogo> 
-                        {/* : 
-                        <NavLogo to='/' onMouseOver={() => setLogo(!logo)} onMouseOut={() => setLogo(true)} >
-                             Armando Pérez Pérez
-                        </NavLogo>
-                        } */}
+                    <NavLogo to='/' onMouseOver={() => setLogo(!logo)} onMouseOut={() => setLogo(true)}>
+                        ArMex
+                    </NavLogo>
                     <MobileIcon onClick={handleClick}>
-                        {click ? <FaTimes style={{color: 'red'}}/> : <FaHamburger style={{color: 'red'}}/>}
+                        {click ? <MenuXIcon /> : <MenuFootIcon />}
                     </MobileIcon>
                     <NavMenu onClick={handleClick} click={click}>
                         <NavItem>
-                            <NavLinks to='/'>Home<NavHr/></NavLinks>
+                            <NavLinks to='/'>Home</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/hallOfFame'>Hall Of Fame<NavHr/></NavLinks>
+                            <NavLinks to='/hallOfFame'>Hall Of Fame</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/createPlayer'>Create Player<NavHr/></NavLinks>
+                            <NavLinks to='/createPlayer'>Create Player</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to='/About'>about<NavHr/></NavLinks>
+                            <NavLinks to='/About'>About</NavLinks>
                         </NavItem>
-                        {/* <NavItem>
-                            <NavLinks to='/projects'>Proyectos<NavHr/></NavLinks>
-                        </NavItem> */}
-                        {/* <NavItemBtn onClick={() => setTheme(!theme) }><NavItemBtnIcon1/></NavItemBtn> */}
                     </NavMenu>
                 </NavbarContainer>   
            </Nav> 

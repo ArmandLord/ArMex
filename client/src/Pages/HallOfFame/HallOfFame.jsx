@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { getTopTen } from '../../redux/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { CardTopTen } from '../../components'
+import { HallOfFameContainer, JustifyHallOfFame } from './HallOfFame.styled'
 
 const HallOfFame = () => {
     const dispatch = useDispatch()
@@ -12,11 +13,13 @@ const HallOfFame = () => {
     }, [dispatch])
 
     return (
-        <div>
-            {
-                topTen.length !== 0 ? (<CardTopTen topTen={topTen}/>) : (<div>Loading...</div>)
-            }
-        </div>
+        <HallOfFameContainer>
+            <JustifyHallOfFame>
+                {
+                    topTen.length !== 0 ? (<CardTopTen topTen={topTen}/>) : (<div>Loading...</div>)
+                }
+            </JustifyHallOfFame>
+        </HallOfFameContainer>
     )
 }
 

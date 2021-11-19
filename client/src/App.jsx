@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { GlobalStyles } from './GlobalStyles/GlobalStyles';
 import { Home, PlayerDetail, NotFound, HallOfFame, About, CreateForm, EditForm } from './Pages'
 import store from './redux/store';
-import { Navbar } from './components'
+import { Navbar, Footer } from './components'
 
 
 
@@ -22,6 +22,7 @@ function App() {
               <Route path="/about" element={<About/>} />  
               <Route path="*" element={<NotFound/>} />  
           </Routes> 
+          <Footer />
       </Router>
     </Provider>
   );

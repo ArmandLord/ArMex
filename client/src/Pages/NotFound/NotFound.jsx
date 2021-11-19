@@ -1,10 +1,12 @@
-
+import { NotFoundContainer, JustifyNotFound } from './NotFound.styled'
 
 const NotFound = () => {
     return (
-        <div>
-            No exite papuuu
-        </div>
+        <NotFoundContainer>
+            <JustifyNotFound>
+                No exite papuuu
+            </JustifyNotFound>
+        </NotFoundContainer>
     )
 }
 

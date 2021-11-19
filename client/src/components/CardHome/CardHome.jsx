@@ -15,7 +15,7 @@ const CardHome = ({ranking, id, nickname, status, avatar}) => {
 
     return (
         <div key={id}>
-            <button onClick={() => handleDelete(id)}></button>
+            <button onClick={() => handleDelete(id)}>X</button>
             <h2>{id}</h2>
             <h2>{ranking}</h2>
             <Link to={`/player/${id}`}><h2>{nickname}</h2></Link>
@@ -26,4 +26,4 @@ const CardHome = ({ranking, id, nickname, status, avatar}) => {
 }
 
 
-export default CardHome
+export default CardHome;

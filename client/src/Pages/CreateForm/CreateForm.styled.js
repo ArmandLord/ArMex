@@ -2,6 +2,18 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Container } from '../../GlobalStyles/GlobalStyles'
 
+export const CreateFContainer = styled.div`
+    background: red;
+    margin-bottom: 250px;
+`
+
+export const JustifyCreateF = styled(Container)`
+    background: blue;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - 60px); //este es mientras no supere el height del contenido
+`
+
 export const HomeLink = styled(Link)`
     background-color: rgba(255, 255, 255, 0.61);
     color: #fff;
