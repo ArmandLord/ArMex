@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { getAllPlayers } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchBar, FilteredStatus, CardHome } from "../../components";
+import { HomeContainer, JustifyHome } from "./Home.styled";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,26 +15,28 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <SearchBar />
-      <FilteredStatus />
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : playersSlice.length !== 0 && !playersSlice.includes(null) ? (
-        playersSlice.map((player, i) => (
-          <CardHome
-            key={player?.id}
-            ranking={player?.ranking}
-            id={player?.id}
-            nickname={player?.nickname}
-            status={player?.status}
-            avatar={player?.avatar}
-          />
-        ))
-      ) : (
-        <div>Player not found</div>
-      )}
-    </div>
+    <HomeContainer>
+      <JustifyHome>
+        <SearchBar />
+        <FilteredStatus />
+        {loading ? (
+          <h1>Loading...</h1>
+        ) : playersSlice.length !== 0 && !playersSlice.includes(null) ? (
+          playersSlice.map((player, i) => (
+            <CardHome
+              key={player?.id}
+              ranking={player?.ranking}
+              id={player?.id}
+              nickname={player?.nickname}
+              status={player?.status}
+              avatar={player?.avatar}
+            />
+          ))
+        ) : (
+          <div>Player not found</div>
+        )}
+      </JustifyHome>
+    </HomeContainer>
   );
 };
 

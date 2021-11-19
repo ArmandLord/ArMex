@@ -1,8 +1,13 @@
+import { AboutContainer, JustifyAbout } from'./About.styled';
+
+
 const About = () => {
     return (
-        <div>
-            about
-        </div>
+        <AboutContainer>
+            <JustifyAbout>
+                about
+            </JustifyAbout>
+        </AboutContainer>
     )
 }
 

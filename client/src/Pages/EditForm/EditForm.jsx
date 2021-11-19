@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { IoCheckmarkDoneSharp, IoHomeSharp } from "react-icons/io5";
+import { IoCheckmarkDoneSharp, /*IoHomeSharp*/ } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  HomeLink,
+  // HomeLink,
   FormContainer,
   Form,
   FormInput,
@@ -10,6 +10,8 @@ import {
   FormCheck,
   ImageCheck,
   ErrorForm,
+  EditFContainer,
+  JustifyEditF
 } from "./EditForm.styled";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -136,10 +138,11 @@ const EditForm = () => {
   );
 
   return (
-    <>
-      <HomeLink to="/">
+    <EditFContainer>
+      <JustifyEditF>
+      {/* <HomeLink to="/">
         <IoHomeSharp />
-      </HomeLink>
+      </HomeLink> */}
       <FormContainer>
         <Form onSubmit={handleOnSubmit}>
           <FormInput
@@ -216,7 +219,8 @@ const EditForm = () => {
           </FormButton>
         </Form>
       </FormContainer>
-    </>
+      </JustifyEditF>
+    </EditFContainer>
   );
 };
 
