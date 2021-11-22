@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { Container } from '../../GlobalStyles/GlobalStyles'
 
 export const CreateFContainer = styled.div`
-    background: red;
+    background: rgb(241, 243, 240);
     margin-bottom: 250px;
 `
 
 export const JustifyCreateF = styled(Container)`
-    background: blue;
+    background: rgb(241, 243, 240);
     display: flex;
     flex-wrap: wrap;
     height: calc(100vh - 60px); //este es mientras no supere el height del contenido
@@ -37,45 +37,63 @@ export const HomeLink = styled(Link)`
 
 export const FormContainer = styled(Container)`
     display: flex;
-
+    align-items: center;
+    padding: 0.7rem;
     ${Container}
 `
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  margin-bottom: 2rem;
-  background: #222831;
-  padding: 5rem;
+  background: rgb(156,18,56);
+  background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  border: 1px solid black;
 `;
 
 export const FormInput = styled.input`
-  width: 68%;
-  height: 90%;
+  width: 30rem;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+  transition: background 0.9s;
+  border-radius: 0.3rem;
+  outline: none;
+  :hover {
+      background: black;
+      color: white;
+  }
 `;
 
 export const FormButton = styled.button`
-    background-color: rgba(255, 255, 255, 0.61);
+    background-color: rgb(241, 243, 240);
     border-radius: 0.5rem;
     cursor: pointer; 
     font-weight: 600;
-    width: 6rem;
-    height: 2.5rem;
+    width: 5rem;
     display: flex;
     justify-content: center;
     text-decoration: none;
     align-items: center;
-    color: rgba(245, 245, 245, 0.849);
+    color: black;
+    margin-top: 1rem;
+    transition: background-color 0.5s, color 0.5s;
+    :hover {
+        background-color: black;
+        color: rgb(241, 243, 240);
+    }
 `;
 
 export const FormCheck = styled.label`
     display: flex;
-    justify-content: space-between;
-    margin-top: 2em;
-    margin-bottom: 0.1em;
-
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: rgb(241, 243, 240);
 `;
 
 export const OptgroupForm = styled.optgroup`
@@ -85,13 +103,21 @@ export const OptgroupForm = styled.optgroup`
 `;
 
 export const ErrorForm = styled.p`
-    color: red;
+    color: rgb(241, 243, 240);
     display: flex;
-    margin-top: 0.1rem;
     font-size: 14px;
+    margin-bottom: 0.6rem;
 `;
 
 export const ImageCheck = styled.img`
     width: 3rem;
-    height: 3rem
-`
+    height: 3.2rem
+`;
+
+export const StatusLabel = styled.label`
+    margin: 0 4rem;
+`;
+
+export const AvatarLabel = styled.label`
+    margin: 0 0.5rem;
+`;

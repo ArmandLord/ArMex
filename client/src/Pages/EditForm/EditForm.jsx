@@ -11,7 +11,9 @@ import {
   ImageCheck,
   ErrorForm,
   EditFContainer,
-  JustifyEditF
+  JustifyEditF,
+  StatusLabel,
+  AvatarLabel
 } from "./EditForm.styled";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -164,7 +166,7 @@ const EditForm = () => {
           {errors.ranking && <ErrorForm>{errors.ranking}</ErrorForm>}
 
           <FormCheck>
-            <label>
+            <StatusLabel>
               <input
                 type="radio"
                 id="oro"
@@ -172,9 +174,9 @@ const EditForm = () => {
                 value="oro"
                 onChange={handleOnCheck}
               />
-              Oro
-            </label>
-            <label>
+              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341740/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_9_pzoie6.png' />
+            </StatusLabel>
+            <StatusLabel>
               <input
                 type="radio"
                 id="plata"
@@ -182,9 +184,9 @@ const EditForm = () => {
                 value="plata"
                 onChange={handleOnCheck}
               />
-              Plata
-            </label>
-            <label>
+              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341734/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_10_duhrgr.png' />
+            </StatusLabel>
+            <StatusLabel>
               <input
                 type="radio"
                 id="bronce"
@@ -192,15 +194,15 @@ const EditForm = () => {
                 value="bronce"
                 onChange={handleOnCheck}
               />
-              Bronce
-            </label>
+              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341721/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_11_grvdtt.png' />
+            </StatusLabel>
           </FormCheck>
           {errors.status && <ErrorForm>{errors.status}</ErrorForm>}
 
           <FormCheck>
             {playerAvatars.map((avatar) => {
               return (
-                <label>
+                <AvatarLabel>
                   <input
                     type="radio"
                     id={avatar}
@@ -209,7 +211,7 @@ const EditForm = () => {
                     onChange={handleOnCheck}
                   />
                   <ImageCheck src={avatar} />
-                </label>
+                </AvatarLabel>
               );
             })}
           </FormCheck>
