@@ -5,9 +5,9 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 console.log(process.env.NODE_ENV)
 let sequelize =
-  process.env.NODE_ENV === "production"
+  process.env.NODE_ENV === "test"
     ? new Sequelize({
-        database: DB_NAME,
+        database: "armex_test",
         dialect: "postgres",
         host: DB_HOST,
         port: 5432,
