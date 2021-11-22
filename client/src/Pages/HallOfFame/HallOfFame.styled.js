@@ -8,16 +8,53 @@ export const HallOfFameContainer = styled.div`
 `
 
 export const BackgroundImageTop = styled.div`
-    /* background-image: url('https://res.cloudinary.com/dy9tey0yi/image/upload/v1637369836/Futbol%20players/fama_ecjxsu.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     background: #000000;
     height: calc(100vh - 60px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    @media screen and (max-width: 960px){
+        flex-direction: column;
+    }
+    div {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        @media screen and (max-width: 960px){
+            width: 100%;
+            height: 50%;
+        }
+
+        h1{
+            color: #fff;
+            font-size: 6vw;
+        }
+        p{
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            font-size: 1.2rem;
+            @media screen and (max-width: 960px){
+                font-size: 1rem;
+            }
+        }
+        a{
+            background: #fff;
+            text-decoration: none;
+            color: #000;
+            padding: .7rem;
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
 
     h2{
         color: white;
