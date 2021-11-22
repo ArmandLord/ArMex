@@ -38,6 +38,7 @@ export const HomeLink = styled(Link)`
 export const FormContainer = styled(Container)`
     display: flex;
     align-items: center;
+    padding: 0.7rem;
     ${Container}
 `
 
@@ -53,6 +54,7 @@ export const Form = styled.form`
   background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
   padding: 3rem;
   border-radius: 1.5rem;
+  border: 1px solid black;
 `;
 
 export const FormInput = styled.input`
@@ -61,6 +63,7 @@ export const FormInput = styled.input`
   margin-bottom: 0.2rem;
   transition: background 0.9s;
   border-radius: 0.3rem;
+  outline: none;
   :hover {
       background: black;
       color: white;
