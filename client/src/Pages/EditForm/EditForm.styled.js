@@ -3,45 +3,21 @@ import { Link } from 'react-router-dom'
 import { Container } from '../../GlobalStyles/GlobalStyles'
 
 export const EditFContainer = styled.div`
+    height: 100%;
     background: rgb(156,18,56);
     background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     margin-bottom: 250px;
-`
-
-export const JustifyEditF = styled(Container)`
-    background: rgb(156,18,56);
-    background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
-    display: flex;
-    flex-wrap: wrap;
-    height: calc(100vh - 60px); //este es mientras no supere el height del contenido
-`
-
-export const HomeLink = styled(Link)`
-    background-color: rgba(255, 255, 255, 0.61);
-    color: #fff;
-    /* justify-self: flex-start; */
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    border-radius: 0.5rem;
-    
+    padding: .5rem 0;
     @media screen and (max-width: 960px){
-        font-size: .7rem;
-    } 
-    &:hover{
-        /*  Buscar más!! filter: blur(1px); */
+        height: auto;
+        padding: .5rem 0;
     }
 `
 
-export const FormContainer = styled(Container)`
+export const JustifyEditF = styled(Container)`
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0.7rem;
-    ${Container}
 `
 
 export const Form = styled.form`
@@ -50,17 +26,20 @@ export const Form = styled.form`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 580px;
   margin: 0 auto;
   background: white;
   background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
-  padding: 3rem;
+  padding: 4rem 3rem;
   border-radius: 1.5rem;
   border: 1px solid rgb(241, 243, 240);
+  @media screen and (max-width: 960px){
+      height: auto;
+  }
 `;
 
 export const FormInput = styled.input`
-  width: 30rem;
+  width: 100%;
   height: 2rem;
   margin-bottom: 0.2rem;
   transition: background 0.9s;
@@ -93,6 +72,9 @@ export const FormButton = styled.button`
 
 export const FormCheck = styled.label`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     color: rgb(241, 243, 240);
