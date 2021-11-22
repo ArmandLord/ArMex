@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getFeat, getAllPlayers } from '../../redux/actions'
-import { SearchBarContainer, SearchIcon } from './SearchBar.styled'
+import { SearchBarContainer, SearchIcon, ButtonRefresh } from './SearchBar.styled'
 
 const SearchBar = () => {
     const [search, setSearch] = useState('')
@@ -27,7 +27,7 @@ const SearchBar = () => {
                 <button type="submit"><SearchIcon/></button>
                 <input placeholder='Search' onChange={handleChange} value={search} type="text" />
             </SearchBarContainer>
-            <button onClick={handleClick}>refresh</button>
+            <ButtonRefresh onClick={handleClick}>Refresh</ButtonRefresh>
         </>
     )
 }
