@@ -11,7 +11,7 @@ export const ContainerFooter = styled.footer`
     display: flex; 
     align-items: center;
     justify-content: center;
-    background: rgb(241, 243, 240);
+    background: rgb(90, 12, 34);
     /* background: ${p => p.theme.color}; */
     
     position: fixed;
@@ -30,10 +30,11 @@ export const FooterMin = styled(Container)`
     padding: 2rem 0 1rem;
     /* background: red; */
     h2{
-        font-size: 1.7rem;
+        font-size: 1.3rem;
         margin: 0;
+        color: #fff;
         @media screen and (max-width: 770px){
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
     }
     small{
@@ -56,23 +57,25 @@ export const Icon = styled.a`
     text-decoration: none;
 `
 export const IconLink = styled(Link)`
-    text-decoration: none;   
-`
+    text-decoration: none; 
+    `
 
 export const IconGitHub = styled(GoMarkGithub)`
     font-size: 1.5rem;
+    color: #ffffff;  
     &:hover{
         transform: scale(1.1);
     }
-`
+    `
 export const IconLinkedIn = styled(SiLinkedin)`
     font-size: 1.5rem;
     &:hover{
         transform: scale(1.1);
     }
-`
+    `
 export const IconInstagram = styled(RiInstagramFill)`
     font-size: 1.5rem;
+    color: #ffffff;  
     &:hover{
         transform: scale(1.1);
     }

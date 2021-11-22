@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AiTwotoneDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const oro = 'https://res.cloudinary.com/dy9tey0yi/image/upload/v1637340168/Futbol%20players/oro_ejgsih.jpg'
@@ -11,7 +10,7 @@ export const CardHomeContainer = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 260px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +20,19 @@ export const CardHomeContainer = styled.div`
     margin-right: 15px;
     margin-top: 20px;
     box-shadow: 0 15px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border: 1px solid #000000;
+
+    h2{
+        background: #000000;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
 
     button{
         background: #000;
@@ -52,12 +64,4 @@ export const LinkNickname = styled(Link)`
     text-decoration: none;
     color: #000;
     font-size: 1.2rem;
-`
-
-export const IconDelete = styled(AiTwotoneDelete)`
-    font-size: 1.2rem;
-    color: #fff;
-    &:hover{
-        color: red;
-    }
 `

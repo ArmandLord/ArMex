@@ -7,6 +7,7 @@ import { Navbar, Footer } from './components'
 
 
 
+
 function App() {
   return (
     <Provider store={store}>
