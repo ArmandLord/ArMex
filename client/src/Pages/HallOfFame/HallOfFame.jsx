@@ -29,10 +29,11 @@ const HallOfFame = () => {
           <h1>Hall of Fame</h1>
           <br />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            repellendus ipsa assumenda mollitia et provident excepturi explicabo
-            optio, perferendis libero. Dignissimos nesciunt harum porro iusto
-            mollitia voluptatum rerum illo natus.
+            The greatest football figures go to the World Cup and standing out
+            in this event is not easy. Therefore, we created a hall of fame for
+            those players with the highest ranking, because they deserve
+            recognition. Congratulations to those privileged who are on this
+            list.
           </p>
           <br />
           <a href="#topOne">Top N.1</a>
@@ -44,7 +45,7 @@ const HallOfFame = () => {
           />
         </div>
       </BackgroundImageTop>
-      <JustifyHallOfFame id='topOne'>
+      <JustifyHallOfFame id="topOne">
         {topTen.length !== 0 ? (
           <CardTopTen topTen={topTen} />
         ) : (

@@ -1,15 +1,35 @@
 import axios from "axios";
 import { getAllPlayers } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { CardHomeContainer, IconDelete, Avatar, LinkNickname } from './CardHome.styled'
+import { CardHomeContainer, IconDelete, Avatar, LinkNickname } from './CardHome.styled';
+import Swal from 'sweetalert2';
+
 
 const CardHome = ({ranking, id, nickname, status, avatar}) => {
     
     const dispatch = useDispatch();
 
     const handleDelete = async (id) => {
-        await axios.delete(`/player/${id}`);
-        dispatch(getAllPlayers());
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This player will be removed!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, confirm',
+            zIndex: "9999"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              axios.delete(`/player/${id}`)
+              .then((result) => dispatch(getAllPlayers()));
+              Swal.fire(
+                'Done!',
+                'The player has been removed from your catalogue',
+                'success'
+              )
+            }
+          })
     }
     
 
