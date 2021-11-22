@@ -1,27 +1,23 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { Container } from '../../GlobalStyles/GlobalStyles'
 
 export const CreateFContainer = styled.div`
+    height: calc(100vh - 60px);
     background: rgb(156,18,56);
     background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     margin-bottom: 250px;
+    @media screen and (max-width: 960px){
+        height: 100%;
+        padding: .5rem 0;
+    }
 `
 
 export const JustifyCreateF = styled(Container)`
-    background: rgb(156,18,56);
-    background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     display: flex;
-    flex-wrap: wrap;
-    height: 100%; //este es mientras no supere el height del contenido
+    justify-content: center;
+    align-items: center;
 `
 
-export const FormContainer = styled(Container)`
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    ${Container}
-`
 
 export const Form = styled.form`
   display: flex;
@@ -29,12 +25,15 @@ export const Form = styled.form`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: auto;
+  height: 80%;
   margin: 0 auto;
   background: rgb(156,18,56);
   background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
   padding: 3rem;
   border: 1px solid rgb(241, 243, 240);
+  @media screen and (max-width: 960px){
+      height: 100vh;
+  }
 `;
 
 export const FormInput = styled.input`

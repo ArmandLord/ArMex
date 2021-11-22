@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { IoCheckmarkDoneSharp, /*IoHomeSharp*/ } from "react-icons/io5";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import {
-  FormContainer,
   Form,
   FormInput,
   FormButton,
@@ -12,7 +11,7 @@ import {
   CreateFContainer,
   JustifyCreateF,
   StatusLabel,
-  AvatarLabel
+  AvatarLabel,
 } from "./CreateForm.styled";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -63,8 +62,6 @@ const CreateForm = () => {
     }
     return errors;
   }
-
-  
 
   const [input, setInput] = useState({
     nickname: "",
@@ -148,10 +145,6 @@ const CreateForm = () => {
   return (
     <CreateFContainer>
       <JustifyCreateF>
-      {/* <HomeLink to="/">
-        <IoHomeSharp />
-      </HomeLink> */}
-      <FormContainer>
         <Form onSubmit={handleOnSubmit}>
           <FormInput
             name="nickname"
@@ -179,7 +172,7 @@ const CreateForm = () => {
                 value="oro"
                 onChange={handleOnCheck}
               />
-              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341740/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_9_pzoie6.png' />
+              <ImageCheck src="https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341740/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_9_pzoie6.png" />
             </StatusLabel>
             <StatusLabel>
               <input
@@ -188,7 +181,7 @@ const CreateForm = () => {
                 value="plata"
                 onChange={handleOnCheck}
               />
-              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341734/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_10_duhrgr.png' />
+              <ImageCheck src="https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341734/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_10_duhrgr.png" />
             </StatusLabel>
             <StatusLabel>
               <input
@@ -197,15 +190,15 @@ const CreateForm = () => {
                 value="bronce"
                 onChange={handleOnCheck}
               />
-              <ImageCheck src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341721/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_11_grvdtt.png' />
+              <ImageCheck src="https://res.cloudinary.com/dy9tey0yi/image/upload/v1637341721/Futbol%20players/Disen%CC%83o_sin_ti%CC%81tulo_11_grvdtt.png" />
             </StatusLabel>
           </FormCheck>
           {errors.status && <ErrorForm>{errors.status}</ErrorForm>}
 
           <FormCheck>
-            {playerAvatars.map((avatar) => {
+            {playerAvatars.map((avatar, i) => {
               return (
-                <AvatarLabel>
+                <AvatarLabel key={i}>
                   <input
                     type="radio"
                     name="avatar"
@@ -222,7 +215,6 @@ const CreateForm = () => {
             <IoCheckmarkDoneSharp />
           </FormButton>
         </Form>
-      </FormContainer>
       </JustifyCreateF>
     </CreateFContainer>
   );
