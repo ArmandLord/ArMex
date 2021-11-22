@@ -148,6 +148,7 @@ const searchPlayer = async (req,res) =>{
   return res.status(200).json({players,offset:Number(offset), playersCount: players.length})
 };
 
+
 module.exports = {
   createPlayers,
   createOnePlayer,
