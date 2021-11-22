@@ -11,6 +11,19 @@ export const JustifyHome = styled(Container)`
     /* background: blue; */
 `
 
+export const ContainerLoading = styled.div`
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-size: 2rem;
+        color: #fff;
+    }
+`
+
 export const ContainerCards = styled.div`
     /* background: #fff; */
     display: flex;

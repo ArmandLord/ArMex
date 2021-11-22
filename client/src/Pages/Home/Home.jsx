@@ -2,7 +2,13 @@ import { useEffect } from "react";
 import { getAllPlayers } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchBar, FilteredStatus, CardHome } from "../../components";
-import { ContainerCards, ContainerSearch, HomeContainer, JustifyHome } from "./Home.styled";
+import {
+  ContainerCards,
+  ContainerSearch,
+  HomeContainer,
+  JustifyHome,
+  ContainerLoading,
+} from "./Home.styled";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
@@ -30,7 +36,13 @@ const Home = () => {
         </ContainerSearch>
         <ContainerCards>
           {loading ? (
-            <h1>Loading...</h1> //cambiar por componente
+            <ContainerLoading>
+              <h2>Loading...</h2>
+              <img
+                src="https://gifimage.net/wp-content/uploads/2017/09/balon-de-futbol-gif-13.gif"
+                alt="balón loading gif"
+              />
+            </ContainerLoading> //cambiar por componente
           ) : playersSlice.length !== 0 && !playersSlice.includes(null) ? (
             playersSlice.map((player, i) => (
               <CardHome
