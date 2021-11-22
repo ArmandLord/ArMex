@@ -142,10 +142,6 @@ const EditForm = () => {
   return (
     <EditFContainer>
       <JustifyEditF>
-      {/* <HomeLink to="/">
-        <IoHomeSharp />
-      </HomeLink> */}
-      <FormContainer>
         <Form onSubmit={handleOnSubmit}>
           <FormInput
             name="nickname"
@@ -220,7 +216,6 @@ const EditForm = () => {
             <IoCheckmarkDoneSharp />
           </FormButton>
         </Form>
-      </FormContainer>
       </JustifyEditF>
     </EditFContainer>
   );
