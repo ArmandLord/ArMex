@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllPlayers } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchBar, FilteredStatus, CardHome } from "../../components";
@@ -10,14 +10,45 @@ import {
   ContainerLoading,
 } from "./Home.styled";
 import { useLocation } from "react-router-dom";
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
+
 
 const Home = () => {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const players = useSelector((state) => state.renderingPlayers);
   const loading = useSelector((state) => state.loading);
   console.log(players);
-  const playersSlice = players?.slice(0, 12);
-  const { pathname } = useLocation();
+
+  // 
+    const [page, setPage] = useState(0)//iria de 10 en 10 ejm : 0-10,20,30
+    const [page2, setPage2] = useState(12)//19
+    const [btnNext, setBtnNext] = useState(false)
+    const [btnPrev, setBtnPrev] = useState(false)
+
+    const handleNextPage = () => {
+        if (players.length < (page2 + 1)) {
+            setBtnNext(true)
+        } else {
+            setPage(page + 12);
+            setPage2(page2 + 12)
+            setBtnPrev(false)
+        }
+
+    }
+
+    const handlePreviousPage = () => {
+        if (page <= 0) {
+            setBtnPrev(true)
+        } else {
+            setPage(page - 12);
+            setPage2(page2 - 12)
+            setBtnNext(false)
+        }
+
+    }
+  // 
+  const playersSlice = players?.slice(page, page2);
 
   useEffect(() => {
     dispatch(getAllPlayers());
@@ -27,12 +58,21 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const resetOne = (a, b) => {
+    setPage(a)
+    setPage2(b)
+    setBtnNext(false)
+    setBtnPrev(false)
+  }
+  
+  console.log('uno inicial' + page, 'dos:' + page2)
+  console.log('next: ' + btnNext, 'prev: ' + btnPrev);
   return (
     <HomeContainer>
       <JustifyHome>
-        <ContainerSearch>
-          <SearchBar />
-          <FilteredStatus />
+        <ContainerSearch >
+          <SearchBar reset={resetOne}/>
+          <FilteredStatus reset={resetOne}/>
         </ContainerSearch>
         <ContainerCards>
           {loading ? (
@@ -58,6 +98,8 @@ const Home = () => {
             <div>Player not found</div> //cambiar por componente
           )}
         </ContainerCards>
+        <button byeBtn={btnPrev} disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></button>
+        <button byeBtn={btnNext} disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></button>
       </JustifyHome>
     </HomeContainer>
   );
