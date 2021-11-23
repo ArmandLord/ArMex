@@ -1,4 +1,4 @@
-import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN } from '../types'
+import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN, RESET_DETAIL } from '../types'
 import axios from 'axios'
 
 export const getAllPlayers = () => {
@@ -41,6 +41,12 @@ export const getFeat = (payload) => {
     };
   };
 
+  export const resetDetail = (payload) => {
+    return {
+        type: RESET_DETAIL,
+        // payload
+    }
+}
 
 
 

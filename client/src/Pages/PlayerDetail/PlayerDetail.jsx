@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { getById } from '../../redux/actions'
+import { getById, resetDetail } from '../../redux/actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { CardDetail } from '../../components'
@@ -12,6 +12,9 @@ const PlayerDetail = () => {
 
     useEffect(() => {
         dispatch(getById(id))
+        return function cleanup() {
+            dispatch(resetDetail())
+        }
     },[id, dispatch])
 
     return (
