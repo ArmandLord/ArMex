@@ -9,9 +9,9 @@ const About = () => {
   return (
     <AboutContainer>
       <JustifyAbout>
-        <TitleAbout>About this App</TitleAbout>
+        <TitleAbout>About ArMex</TitleAbout>
         <TextAbout>
-          The Qatar World Cup is approaching and the world is anxiously waiting
+          The Qatar World Cup is approaching and the whole planet is anxiously waiting
           for the event that transcends borders, countries, cultures and
           continents. We know that the wait is long so we designed a game where
           you can create your own player with your own nickname, where you can

@@ -8,6 +8,7 @@ export const AboutContainer = styled.div`
     rgba(156, 18, 56, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,19 +16,26 @@ export const AboutContainer = styled.div`
   margin-bottom: 250px;
 `;
 
+
 export const JustifyAbout = styled(Container)`
   display: flex;
   height: calc(
-    100vh - 60px
+    93vh - 60px
   ); //este es mientras no supere el height del contenido
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  border: 1px solid rgb(241, 243, 240);
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
   @media screen and (max-width: 650px) {
     overflow-y: scroll;
   }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
 `;
-
 export const TitleAbout = styled.h2`
   font-size: 4rem;
   letter-spacing: 0.3rem;
@@ -50,6 +58,9 @@ export const TitleAbout = styled.h2`
     margin-bottom: -4rem;
   }
 `;
+
+
+
 
 export const TextAbout = styled.p`
   height: 30rem;
