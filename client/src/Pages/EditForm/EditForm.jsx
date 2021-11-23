@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { IoCheckmarkDoneSharp, /*IoHomeSharp*/ } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  // HomeLink,
-  FormContainer,
   Form,
   FormInput,
   FormButton,
