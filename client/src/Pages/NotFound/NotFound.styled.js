@@ -11,7 +11,8 @@ export const NotFoundContainer = styled.div`
 export const JustifyNotFound = styled(Container)`
     /* background: blue; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     height: calc(100vh - 60px); //este es mientras no supere el height del contenido
 `
 
@@ -45,5 +46,15 @@ export const NavLinks = styled(Link)`
         padding: 2rem;
         width: 100%;
         display: table;
+    }
+ `
+
+ export const NotFoundImg = styled.img`
+    width: 50%;
+    margin: 2rem auto 0 auto;
+
+    @media screen and (max-width: 414px) {
+        width: 100%;
+        margin: 3rem auto 0 auto;
     }
  `
