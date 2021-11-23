@@ -1,14 +1,14 @@
 {
     "development": {
-      "username": "local",
-      "password": "local",
+      "username": "postgres",
+      "password": "postgres",
       "database": "armex",
       "host": "localhost",
       "dialect": "postgres"
     },
     "test": {
-      "username": "local",
-      "password": "local",
+      "username": "postgres",
+      "password": "postgres",
       "database": "armex_test",
       "host": "localhost",
       "dialect": "postgres"

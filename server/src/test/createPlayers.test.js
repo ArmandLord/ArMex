@@ -4,7 +4,7 @@ const request = supertest(app);
 const { Player, conn } = require('../db');
 
 
-describe('test endpoint createOnePlayer', ()=>{
+describe('test endpoint createPlayers', ()=>{
     beforeEach(async ()=>{
         await Object.values(conn.models).map(function(model) {
             return model.destroy({ truncate: { cascade: true } });
@@ -18,12 +18,12 @@ describe('test endpoint createOnePlayer', ()=>{
     });
 
 
-    it('createOnePlayer debe poder crear un player y guardarlo en la base de datos', async()  => {
+    it('createPlayers debe poder crear players de forma masiva', async()  => {
         // Sends GET Request to /test endpoint
-        const res = await request.post('/player/onePlayer').send({nickname:"guido", status:"oro", ranking:2, avatar:"https://res.cloudinary.com/dy9tey0yi/image/upload/v1637177226/Futbol%20players/cristiano-ronaldo_zm5u9x.png"})
-        const players = await Player.findOne({where:{nickname:"guido"}});
+        const res = await request.post('/player')
+        const players = await Player.findAll();
         //creo un player y despues lo busca en la base de datos y espera que el unico player existente sea el creado
         
-        expect(players.dataValues.nickname).toEqual("guido");
+        expect(players.length).toEqual(3000);
     });
 });
