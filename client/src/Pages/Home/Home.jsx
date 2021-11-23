@@ -18,7 +18,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const players = useSelector((state) => state.renderingPlayers);
   const loading = useSelector((state) => state.loading);
-  console.log(players);
 
   // 
     const [page, setPage] = useState(0)//iria de 10 en 10 ejm : 0-10,20,30
@@ -65,8 +64,6 @@ const Home = () => {
     setBtnPrev(false)
   }
   
-  console.log('uno inicial' + page, 'dos:' + page2)
-  console.log('next: ' + btnNext, 'prev: ' + btnPrev);
   return (
     <HomeContainer>
       <JustifyHome>
@@ -98,8 +95,8 @@ const Home = () => {
             <div>Player not found</div> //cambiar por componente
           )}
         </ContainerCards>
-        <button byeBtn={btnPrev} disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></button>
-        <button byeBtn={btnNext} disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></button>
+        <button disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></button>
+        <button disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></button>
       </JustifyHome>
     </HomeContainer>
   );
