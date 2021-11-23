@@ -21,6 +21,8 @@ export const CardHomeContainer = styled.div`
     margin-right: 15px;
     margin-top: 20px;
     box-shadow: 0 15px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    z-index: 1;
 
     button{
         background: #000;
@@ -31,11 +33,11 @@ export const CardHomeContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        top: -92%;
-        left: 40%;
+        position: absolute;
+        top: 2%;
+        left: 83%;
         cursor: pointer;
-        
+        z-index: 99 !important;
     }
 
     @media (max-width: 590px) {
@@ -52,6 +54,11 @@ export const LinkNickname = styled(Link)`
     text-decoration: none;
     color: #000;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 `
 
 export const IconDelete = styled(AiTwotoneDelete)`

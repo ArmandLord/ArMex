@@ -32,14 +32,17 @@ export const getTopTen = () => {
   };
 
 export const getFeat = (payload) => {
-    return async function (dispatch) {
-        const data = await axios(`http://localhost:3001/player/search/${payload}`);
+  return async function (dispatch) {
+    const data = await axios(`http://localhost:3001/player/search/${payload}`);
         return dispatch({
         type: GET_FEAT,
-        payload: data.data,
+        payload: data.data.players,
       });
     };
   };
+
+
+
 
 
 

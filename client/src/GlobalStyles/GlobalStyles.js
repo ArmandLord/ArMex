@@ -9,7 +9,11 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat Alternates', sans-serif;
         font-family: 'Playfair Display', serif;
         font-family: 'Poppins', sans-serif;
-        
+    }
+
+    body{
+        background: rgb(156,18,56);
+        background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     }
 `
 

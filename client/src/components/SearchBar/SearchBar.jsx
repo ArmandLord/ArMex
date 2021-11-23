@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { getFeat, getAllPlayers } from '../../redux/actions'
 import { SearchBarContainer, SearchIcon, ButtonRefresh } from './SearchBar.styled'
 
-const SearchBar = () => {
+const SearchBar = ({reset}) => {
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()
 
@@ -15,10 +15,12 @@ const SearchBar = () => {
         e.preventDefault()
         setSearch('')
         dispatch(getFeat(search))
+        reset(0, 12)   
     }
-
+    
     const handleClick = () => {
         dispatch(getAllPlayers())
+        reset(0, 12)   
     }
 
     return (
