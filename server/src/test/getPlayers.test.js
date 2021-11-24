@@ -19,7 +19,7 @@ describe('test endpoint getPlayers',()=>{
 
     it('Get players debe retornar todos los jugadores de la base de datos', async()  => {
         await Player.create({
-            id: 2,
+            id: 5000,
             nickname: "diosquez",
             status: "oro",
             ranking : 2,
@@ -27,7 +27,7 @@ describe('test endpoint getPlayers',()=>{
         });
 
         await Player.create({
-            id: 3,
+            id: 5002,
             nickname: "denis",
             status: "oro",
             ranking : 2,
@@ -35,7 +35,7 @@ describe('test endpoint getPlayers',()=>{
         });
 
         await Player.create({
-            id: 4,
+            id: 5004,
             nickname: "goumaz",
             status: "oro",
             ranking : 2,
@@ -44,10 +44,13 @@ describe('test endpoint getPlayers',()=>{
     
     // Sends GET Request to /test endpoint
     const res = await request.get('/player')
-    //console.log(res.body)
-    expect(res.body.players[0].id).toEqual(2);
-    expect(res.body.players[0].nickname).toEqual("diosquez");
-    expect(res.body.players[1].id).toEqual(3);
-    expect(res.body.players[1].nickname).toEqual("denis");
+    console.log(res.body)
+    expect(res.body[0].id).toEqual(5000);
+    expect(res.body[0].nickname).toEqual("diosquez");
+    expect(res.body[1].id).toEqual(5002);
+    expect(res.body[1].nickname).toEqual("denis");
+    expect(res.body[2].id).toEqual(5004);
+    expect(res.body[2].nickname).toEqual("goumaz");
+    
 });
 });

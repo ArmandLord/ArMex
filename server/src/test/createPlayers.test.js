@@ -18,12 +18,14 @@ describe('test endpoint createPlayers', ()=>{
     });
 
 
-    it('createPlayers debe poder crear players de forma masiva', async()  => {
+    it('createPlayers debe poder crear players de forma masiva', async () => {
         // Sends GET Request to /test endpoint
         const res = await request.post('/player')
-        const players = await Player.findAll();
+        console.log(res.status)
+        const players = await Player.count();
+        console.log("ACCAAAAAAAAAAAAAAAAAAA",players)
         //creo un player y despues lo busca en la base de datos y espera que el unico player existente sea el creado
         
-        expect(players.length).toEqual(3000);
+        expect(players).toEqual(3000);
     });
 });

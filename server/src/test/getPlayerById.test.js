@@ -7,7 +7,7 @@ describe('test endpoint getPlayerById',()=>{
     beforeEach(async ()=>{
         await Object.values(conn.models).map(function(model) {
             return model.destroy({ truncate: { cascade: true } });
-        }); 
+        });
     });
 
     afterEach(async ()=>{
@@ -19,7 +19,7 @@ describe('test endpoint getPlayerById',()=>{
 
     it('Search players debe retornar el unico player que coincida con su id', async()  => {
         await Player.create({
-            id: 2,
+            id: 7000,
             nickname: "franco",
             status: "oro",
             ranking : 2,
@@ -27,7 +27,7 @@ describe('test endpoint getPlayerById',()=>{
         });
 
         await Player.create({
-            id: 3,
+            id: 7002,
             nickname: "vidal",
             status: "oro",
             ranking : 2,
@@ -35,9 +35,9 @@ describe('test endpoint getPlayerById',()=>{
         });
     
     // Sends GET Request to /test endpoint
-    const res = await request.get('/player/3')
-    //console.log(res.body)
-    expect(res.body.players[0].id).toEqual(3);
-    expect(res.body.players[0].nickname).toEqual("vidal");
+    const res = await request.get('/player/7002');
+    console.log("PLAYEEEEEEEEEERS",res.body)
+    expect(res.body.id).toEqual(7002);
+    expect(res.body.nickname).toEqual("vidal");
 });
 });
