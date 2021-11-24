@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "nodemon -L",
     "start": "nodemon -L",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "testing": "jest",
+    "start-dev": "nodemon index.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "test": "cross-env NODE_ENV=test jest --runInBand  --detectOpenHandles --testTimeout=10000",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +25,16 @@
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
     "sequelize": "^6.9.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
