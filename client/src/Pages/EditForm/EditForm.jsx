@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { IoCheckmarkDoneSharp, /*IoHomeSharp*/ } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  // HomeLink,
-  FormContainer,
   Form,
   FormInput,
   FormButton,
@@ -142,10 +140,6 @@ const EditForm = () => {
   return (
     <EditFContainer>
       <JustifyEditF>
-      {/* <HomeLink to="/">
-        <IoHomeSharp />
-      </HomeLink> */}
-      <FormContainer>
         <Form onSubmit={handleOnSubmit}>
           <FormInput
             name="nickname"
@@ -220,7 +214,6 @@ const EditForm = () => {
             <IoCheckmarkDoneSharp />
           </FormButton>
         </Form>
-      </FormContainer>
       </JustifyEditF>
     </EditFContainer>
   );

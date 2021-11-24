@@ -138,7 +138,7 @@ const searchPlayer = async (req,res) =>{
   const {limit ,offset} = req.query;
   if(!isNaN(search)){
     const player = await servicesPlayer.playerById(search)
-    return res.status(200).json({players:player,offset:Number(offset), playersCount: 1})
+    return res.status(200).json({players:[player],offset:Number(offset), playersCount: 1})
   };
   if(search === "oro" || search === "bronce" || search === "plata"){
     const playersStatus = await servicesPlayer.playersByStatus(search,limit,offset);

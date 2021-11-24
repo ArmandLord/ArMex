@@ -2,14 +2,16 @@ import { useDispatch } from 'react-redux'
 import { getFeat, getAllPlayers } from '../../redux/actions'
 import { FilteredStatusSelect } from './FilteredStatus.styled'
 
-const FilteredStatus = () => {
+const FilteredStatus = ({reset}) => {
     const dispatch = useDispatch()
     
     const handleChange = (e) => {
         if (e.target.value === 'all') {
             dispatch(getAllPlayers())
+            reset(0, 12)
         } else {
             dispatch(getFeat(e.target.value))
+            reset(0, 12)
         }
     }
 

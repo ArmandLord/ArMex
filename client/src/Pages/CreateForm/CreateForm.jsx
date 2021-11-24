@@ -194,7 +194,6 @@ const CreateForm = () => {
             </StatusLabel>
           </FormCheck>
           {errors.status && <ErrorForm>{errors.status}</ErrorForm>}
-
           <FormCheck>
             {playerAvatars.map((avatar, i) => {
               return (
@@ -219,5 +218,6 @@ const CreateForm = () => {
     </CreateFContainer>
   );
 };
+
 
 export default CreateForm;

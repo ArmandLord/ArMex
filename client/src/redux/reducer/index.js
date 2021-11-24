@@ -1,4 +1,4 @@
-import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN } from "../types";
+import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN, RESET_DETAIL } from "../types";
 
 const dataInitial = {
   players: [],
@@ -24,6 +24,11 @@ export default function charactersReducer(
       return {
         ...state,
         player: payload,
+      };
+      case RESET_DETAIL: 
+      return{
+          ...state,
+          player: {}
       };
     case GET_TOP_TEN:
       return {

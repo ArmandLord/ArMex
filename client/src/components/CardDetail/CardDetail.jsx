@@ -1,14 +1,17 @@
-import { Link } from 'react-router-dom'
+import { CardDetailContainer, CardDetailContentInfo, LinkEdit } from './CardDetail.styled'
 
 const CardDetail = ({player}) => {
     return (
-        <div>
-           <h1>{player.nickname}</h1>
-           <h5>{player.status}</h5>
-           <h5>{player.ranking}</h5>
-           <img style={{width: '300px'}} src={player.avatar} alt="sda"/>
-           <Link to={`/editPlayer/${player.id}`}><h2>Edit Player</h2></Link>
-        </div>
+        <CardDetailContainer status={player.status} >
+           <img src={player.avatar} alt="sda"/>
+           <CardDetailContentInfo>
+            <h2>{player.nickname}</h2>
+            <h5>Status: {player.status}</h5>
+            <h5>Ranking: {player.ranking}</h5>
+            <h5>Id: {player.id}</h5>
+            <LinkEdit to={`/editPlayer/${player.id}`}><h3>Edit Player</h3></LinkEdit>
+           </CardDetailContentInfo>
+        </CardDetailContainer >
     )
 }
 

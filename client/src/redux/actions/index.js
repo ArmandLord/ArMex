@@ -1,4 +1,4 @@
-import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN } from '../types'
+import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN, RESET_DETAIL } from '../types'
 import axios from 'axios'
 
 export const getAllPlayers = () => {
@@ -32,14 +32,23 @@ export const getTopTen = () => {
   };
 
 export const getFeat = (payload) => {
-    return async function (dispatch) {
-        const data = await axios(`http://localhost:3001/player/search/${payload}`);
+  return async function (dispatch) {
+    const data = await axios(`http://localhost:3001/player/search/${payload}`);
         return dispatch({
         type: GET_FEAT,
-        payload: data.data,
+        payload: data.data.players,
       });
     };
   };
+
+  export const resetDetail = (payload) => {
+    return {
+        type: RESET_DETAIL,
+        // payload
+    }
+}
+
+
 
 
 
