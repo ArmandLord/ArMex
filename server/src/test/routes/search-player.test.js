@@ -1,22 +1,19 @@
 
 const supertest = require('supertest');
-const app = require('../app');
+const app = require('../../app');
 const request = supertest(app);
-const {Player,conn} = require('../db');
+const {Player} = require('../../db');
+const helperTest = require('../helperTest/helperTest');
 
 
 describe('test endpoint search',()=>{
 
     beforeEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        }); 
+        const truncate = await helperTest.truncateDataBase();
     });
 
     afterEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        });
+        const truncate = await helperTest.truncateDataBase();
     });
 
 

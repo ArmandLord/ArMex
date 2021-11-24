@@ -5,7 +5,7 @@ const pick = (array) => {
   return array[i];
 };
 
-const createMassivePlayers = async () => {
+const createMassivePlayers = async (cantidad) => {
   const playerAvatars = [
     "https://res.cloudinary.com/dy9tey0yi/image/upload/v1637177226/Futbol%20players/cristiano-ronaldo_zm5u9x.png",
     "https://res.cloudinary.com/dy9tey0yi/image/upload/v1637177222/Futbol%20players/griezmann_vuq91e.png",
@@ -166,7 +166,7 @@ const createMassivePlayers = async () => {
     "da",
   ];
 
-  for (let i = 1; i <= 3000; i++) {
+  for (let i = 1; i <= cantidad; i++) {
     await Player.create({
       status: playerStatus[Math.floor(Math.random() * playerStatus.length)],
       avatar: playerAvatars[Math.floor(Math.random() * playerAvatars.length)],
@@ -175,6 +175,7 @@ const createMassivePlayers = async () => {
         pick(beg) + pick(mid) + pick(end) + Math.floor(Math.random() * 3000),
     });
   }
+  return Promise.resolve();
 };
 
 
