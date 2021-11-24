@@ -1,20 +1,18 @@
 const supertest = require('supertest');
-const app = require('../app');
+const app = require('../../app');
 const request = supertest(app);
-const {Player,conn} = require('../db');
+const {Player} = require('../../db');
+const helperTest = require('../helperTest/helperTest');
 
 
-describe('test endpoint createOnePlayer',()=>{
+describe('test endpoint deletePlayer',()=>{
+
     beforeEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        }); 
+        const truncate = await helperTest.truncateDataBase();
     });
 
     afterEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        });
+        const truncate = await helperTest.truncateDataBase();
     });
 
 
@@ -29,7 +27,7 @@ describe('test endpoint createOnePlayer',()=>{
         });
         const res = await request.delete('/player/1');
         const player = await Player.findByPk(1);
-        console.log(player)
+       // console.log(player)
         //creo un player y despues lo busca en la base de datos y espera que el unico player existente sea el creado
         
         expect(player).toEqual(null);

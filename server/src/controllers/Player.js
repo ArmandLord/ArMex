@@ -7,9 +7,10 @@ const servicesPlayer = require('../services/searchPlayer');
 
 const createPlayers = async (req, res) => {
   try {
-    createMassivePlayers();
+    const {cantidad = 3000} = req.body;
+   await  createMassivePlayers(cantidad);
 
-    res.status(200).send("Players successfuly created.");
+    return res.status(200).send("Players successfuly created.");
   } catch (err) {
     res.status(404).send(err);
   }
