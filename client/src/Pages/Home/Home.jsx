@@ -8,6 +8,8 @@ import {
   HomeContainer,
   JustifyHome,
   ContainerLoading,
+  BtnPaginate,
+  PaginateContainer
 } from "./Home.styled";
 import { useLocation } from "react-router-dom";
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
@@ -95,8 +97,10 @@ const Home = () => {
             <div>Player not found</div> //cambiar por componente
           )}
         </ContainerCards>
-        <button disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></button>
-        <button disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></button>
+        <PaginateContainer>
+        <BtnPaginate disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></BtnPaginate>
+        <BtnPaginate disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></BtnPaginate>
+        </PaginateContainer>
       </JustifyHome>
     </HomeContainer>
   );

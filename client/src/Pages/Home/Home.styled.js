@@ -45,3 +45,34 @@ export const ContainerSearch = styled.div`
 
     /* background: #fff; */
 `
+
+export const PaginateContainer = styled.div`
+    width:11%;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-around;
+
+
+`
+
+export const BtnPaginate = styled.button `
+    padding: .1rem 0 0 0;
+    border: none;
+    height: 2rem;
+    width: 2.5rem;
+    border-radius: .8rem;
+    background: #000000;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    align-items: center;
+    margin: 0 .8rem 1rem 0;
+    font-size: 1.5rem;
+
+
+
+    &:hover{
+        cursor: pointer;
+        color: white;
+        
+    }
+`
