@@ -23,6 +23,11 @@ export const CardHomeContainer = styled.div`
     box-shadow: 0 15px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     z-index: 1;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+        transform: scale(1.05);
+    }
 
     button{
         background: #000;
@@ -39,6 +44,7 @@ export const CardHomeContainer = styled.div`
         cursor: pointer;
         z-index: 99 !important;
     }
+
 
     @media (max-width: 590px) {
         width: 95%;
