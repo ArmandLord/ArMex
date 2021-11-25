@@ -19,9 +19,9 @@ const FilteredStatus = ({reset}) => {
         <>
            <FilteredStatusSelect onChange={handleChange}>
                 <option value="all">All</option>
-                <option value="oro">Oro</option>
-                <option value="plata">Plata</option>
-                <option value="bronce">Bronce</option>
+                <option value="oro">Gold</option>
+                <option value="plata">Silver</option>
+                <option value="bronce">Bronze</option>
            </FilteredStatusSelect>
         </>
     )

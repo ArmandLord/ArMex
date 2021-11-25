@@ -28,17 +28,14 @@ const HallOfFame = () => {
         <div>
           <h1>Hall of Fame</h1>
           <br />
-<<<<<<< HEAD
-          <p >
-          The greatest football figures go to the World Cup and standing out in this event is not easy. Therefore, we created a hall of fame for those players with the highest ranking, because they deserve recognition. Congratulations to those privileged who are on this list.
-=======
+
           <p>
             The greatest football figures go to the World Cup and standing out
             in this event is not easy. Therefore, we created a hall of fame for
             those players with the highest ranking, because they deserve
             recognition. Congratulations to those privileged who are on this
             list.
->>>>>>> d15425838253bc746150075e360869607dead425
+
           </p>
           <br />
           <a href="#topOne">Top N.1</a>

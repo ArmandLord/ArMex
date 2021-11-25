@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <ContainerFooter>
       <FooterMin>
-        <h2>Contáctanos</h2>
+        <h2>Contact us</h2>
         <ContainerIcons>
           <Icon
             rel="noreferrer"
@@ -42,7 +42,7 @@ const Footer = () => {
           </Icon>
         </ContainerIcons>
 
-        <small>Copyright © 2021 ArMex. Diseño by team ArMex</small>
+        <small>Copyright © 2021 ArMex. Design by team ArMex</small>
       </FooterMin>
     </ContainerFooter>
   );
