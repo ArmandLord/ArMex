@@ -22,12 +22,16 @@ export const JustifyAbout = styled(Container)`
   height: calc(100vh - 60px);
   justify-content: space-around;
   align-items: center;
-  @media screen and (max-width: 650px) {
-    overflow-y: scroll;
-  }
+  
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
+  }
+
+  @media (max-width: 900px) {
+    &:hover{
+      transform: scale(1);
+    }
   }
 `;
 
@@ -38,26 +42,23 @@ export const AboutText = styled.div`
   transition: all 0.3s ease-in-out;
   flex-direction: column;
   padding: 2rem;
+  @media (max-width: 900px) {
+    overflow-y: scroll;
+  }
 `;
 
 export const TitleAbout = styled.h2`
+  color: white;
   font-size: 4rem;
   letter-spacing: 0.3rem;
-  line-height: 2rem;
   margin-bottom: 2.5rem;
-  padding: 1rem;
-  color: white;
-  transition: color 0.7s;
-
-
+  
   @media screen and (max-width: 670px) {
     font-size: 2rem;
-    margin-bottom: -4rem;
   };
 
   @media screen and (max-width: 450px) {
     font-size: 1.8rem;
-    margin-bottom: -4rem;
   }
 `;
 

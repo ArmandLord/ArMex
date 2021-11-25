@@ -90,7 +90,7 @@ const CreateForm = () => {
 
     axios({
       method: "post",
-      url: "http://localhost:3001/player/onePlayer",
+      url: "/player/onePlayer",
       data: {
         nickname: input.nickname,
         status: input.status,

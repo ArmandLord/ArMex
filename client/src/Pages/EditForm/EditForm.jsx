@@ -43,7 +43,7 @@ const EditForm = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    axios(`http://localhost:3001/player/${id}`).then((res) => {
+    axios(`/player/${id}`).then((res) => {
       setInput(res.data);
       document.getElementById(res.data.status).checked = true;
       document.getElementById(res.data.avatar).checked = true
@@ -98,7 +98,7 @@ const EditForm = () => {
 
     axios({
       method: "put",
-      url: "http://localhost:3001/player",
+      url: "/player",
       data: {
         id: id,
         nickname: input.nickname,
