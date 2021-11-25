@@ -10,7 +10,9 @@ import {
   ContainerLoading,
   BtnPaginate,
   PaginateContainer,
-  ContainerNotFound
+  ContainerNotFound,
+  TopContainer,
+  IconTop
 } from "./Home.styled";
 import { useLocation } from "react-router-dom";
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
@@ -71,7 +73,7 @@ const Home = () => {
     <HomeContainer>
       <JustifyHome>
         <ContainerSearch >
-          <SearchBar reset={resetOne}/>
+          <SearchBar id='top' reset={resetOne}/>
           <FilteredStatus reset={resetOne}/>
         </ContainerSearch>
         <ContainerCards>
@@ -101,9 +103,12 @@ const Home = () => {
           )}
         </ContainerCards>
         <PaginateContainer>
-        <BtnPaginate disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></BtnPaginate>
-        <BtnPaginate disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></BtnPaginate>
+          <BtnPaginate disabled={btnPrev} onClick={handlePreviousPage}><GoArrowLeft/></BtnPaginate>
+          <BtnPaginate disabled={btnNext} onClick={handleNextPage}><GoArrowRight/></BtnPaginate>
         </PaginateContainer>
+        <TopContainer>
+          <a href='#top'><IconTop/></a>
+        </TopContainer>
       </JustifyHome>
     </HomeContainer>
   );

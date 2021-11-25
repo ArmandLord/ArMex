@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from '../../GlobalStyles/GlobalStyles'
+import { GoArrowUp } from 'react-icons/go'
 
 export const HomeContainer = styled.div`
     background: rgb(156,18,56);
@@ -62,8 +63,36 @@ export const PaginateContainer = styled.div`
     margin: 0 auto;
     display: flex;
     justify-content:space-around;
+`
+export const TopContainer = styled.div`
+    display: none;
 
+    @media (max-width: 900px) {
+        
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+            a{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #fff;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background: #000;
+            }
 
+    }
+`
+
+export const IconTop = styled(GoArrowUp)`
+    font-size: 1.3rem;
+    color: #fff;
 `
 
 export const BtnPaginate = styled.button `
@@ -78,8 +107,6 @@ export const BtnPaginate = styled.button `
     align-items: center;
     margin: 0 .8rem 1rem 0;
     font-size: 1.5rem;
-
-
 
     &:hover{
         cursor: pointer;
