@@ -15,6 +15,7 @@ import {
 } from "./EditForm.styled";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 const EditForm = () => {
   const playerAvatars = [
@@ -39,6 +40,7 @@ const EditForm = () => {
 
   const { id } = useParams();
   const [input, setInput] = useState({});
+  const { pathname } = useLocation();
 
   useEffect(() => {
     axios(`http://localhost:3001/player/${id}`).then((res) => {
@@ -47,6 +49,10 @@ const EditForm = () => {
       document.getElementById(res.data.avatar).checked = true
     });
   }, [id]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[pathname])
 
   function validate(input) {
     let errors = {};
@@ -194,9 +200,9 @@ const EditForm = () => {
           {errors.status && <ErrorForm>{errors.status}</ErrorForm>}
 
           <FormCheck>
-            {playerAvatars.map((avatar) => {
+            {playerAvatars.map((avatar, i) => {
               return (
-                <AvatarLabel>
+                <AvatarLabel key={i}>
                   <input
                     type="radio"
                     id={avatar}
