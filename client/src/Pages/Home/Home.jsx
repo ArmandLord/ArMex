@@ -9,7 +9,8 @@ import {
   JustifyHome,
   ContainerLoading,
   BtnPaginate,
-  PaginateContainer
+  PaginateContainer,
+  ContainerNotFound
 } from "./Home.styled";
 import { useLocation } from "react-router-dom";
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
@@ -81,7 +82,7 @@ const Home = () => {
                 src="https://gifimage.net/wp-content/uploads/2017/09/balon-de-futbol-gif-13.gif"
                 alt="balón loading gif"
               />
-            </ContainerLoading> //cambiar por componente
+            </ContainerLoading> 
           ) : playersSlice.length !== 0 && !playersSlice.includes(null) ? (
             playersSlice.map((player, i) => (
               <CardHome
@@ -94,7 +95,9 @@ const Home = () => {
               />
             ))
           ) : (
-            <div>Player not found</div> //cambiar por componente
+            <ContainerNotFound>
+              <h2>Player not found.</h2>
+            </ContainerNotFound>
           )}
         </ContainerCards>
         <PaginateContainer>

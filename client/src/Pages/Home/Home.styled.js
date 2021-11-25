@@ -23,6 +23,17 @@ export const ContainerLoading = styled.div`
         color: #fff;
     }
 `
+export const ContainerNotFound = styled.div`
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    h2{
+        font-size: 2rem;
+        color: #fff;
+    }
+`
 
 export const ContainerCards = styled.div`
     /* background: #fff; */

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import {
@@ -15,6 +15,7 @@ import {
 } from "./CreateForm.styled";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 const CreateForm = () => {
   const playerAvatars = [
@@ -37,6 +38,7 @@ const CreateForm = () => {
 
   const navigate = useNavigate();
 
+  const { pathname } = useLocation();
   function validate(input) {
     let errors = {};
 
@@ -142,6 +144,10 @@ const CreateForm = () => {
     !errors.avatar
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <CreateFContainer>
       <JustifyCreateF>
@@ -218,6 +224,5 @@ const CreateForm = () => {
     </CreateFContainer>
   );
 };
-
 
 export default CreateForm;

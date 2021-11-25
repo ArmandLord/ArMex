@@ -13,3 +13,16 @@ export const JustifyPlayerDetail = styled(Container)`
     align-items: center;
     height: calc(100vh - 60px); //este es mientras no supere el height del contenido
 `
+
+export const ContainerLoading = styled.div`
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-size: 2rem;
+        color: #fff;
+    }
+`
