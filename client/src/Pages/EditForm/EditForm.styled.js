@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Container } from '../../GlobalStyles/GlobalStyles'
 
 export const EditFContainer = styled.div`
-    height: 100%;
+    height: 95vh;
     background: rgb(156,18,56);
     background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     margin-bottom: 250px;
@@ -27,45 +27,62 @@ export const Form = styled.form`
   width: 100%;
   height: 580px;
   margin: 0 auto;
-  background: white;
+  background: rgb(156,18,56);
   background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
   padding: 4rem 3rem;
-  border-radius: 1.5rem;
   border: 1px solid rgb(241, 243, 240);
+  border-radius:1rem;
   @media screen and (max-width: 960px){
       height: auto;
   }
 `;
 
 export const FormInput = styled.input`
-  width: 100%;
+width: 100%;
   height: 2rem;
   margin-bottom: 0.2rem;
   transition: background 0.9s;
   border-radius: 0.3rem;
   outline: none;
+  background: transparent;
+  color: white;
+  border: 1px solid rgb(241, 243, 240);
   :hover {
       background: black;
+      color: white;
+
+  }
+  ::placeholder {
       color: white;
   }
 `;
 
 export const FormButton = styled.button`
-    background-color: rgb(241, 243, 240);
-    border-radius: 0.5rem;
+    background-color: #0f0f0f;
+    border-radius: 1rem;
     cursor: pointer; 
     font-weight: 600;
     width: 5rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     text-decoration: none;
     align-items: center;
-    color: black;
+    border: none;
+    color: #e0e0e0;
     margin-top: 1rem;
-    transition: background-color 0.5s, color 0.5s;
+    transition: all 0.3s ease-in-out;
     :hover {
-        background-color: black;
-        color: rgb(241, 243, 240);
+        background-color: green;
+        color: white;
+        transform: scale(1.1);
+        font-size: 1.2rem;
+
+    }
+
+    @media screen and (max-width: 414px) {
+        background-color: green;
+        color: white;
     }
 `;
 
