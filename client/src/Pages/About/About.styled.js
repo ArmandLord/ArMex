@@ -93,11 +93,9 @@ export const TitleAbout = styled.h2`
   line-height: 2rem;
   margin-bottom: 2.5rem;
   padding: 1rem;
-  color: black;
+  color: white;
   transition: color 0.7s;
-  &:hover {
-    color: white;
-  }
+
 
   @media screen and (max-width: 670px) {
     font-size: 2rem;

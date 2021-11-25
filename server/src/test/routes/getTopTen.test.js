@@ -1,19 +1,17 @@
 const supertest = require('supertest');
-const app = require('../app');
+const app = require('../../app');
 const request = supertest(app);
-const {Player,conn} = require('../db');
+const {Player} = require('../../db');
+const helperTest = require('../helperTest/helperTest');
 
 describe('test endpoint getTopTen',()=>{
+
     beforeEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        }); 
+        const truncate = await helperTest.truncateDataBase();
     });
 
     afterEach(async ()=>{
-        await Object.values(conn.models).map(function(model) {
-            return model.destroy({ truncate: { cascade: true } });
-        });
+        const truncate = await helperTest.truncateDataBase();
     });
 
 
@@ -100,7 +98,7 @@ describe('test endpoint getTopTen',()=>{
     
     // Sends GET Request to /test endpoint
     const res = await request.get('/player/topTen');
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",res.body)
+    //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",res.body)
     expect(res.body[0].id).toEqual(1);
     expect(res.body[0].nickname).toEqual("diosquez");
 
