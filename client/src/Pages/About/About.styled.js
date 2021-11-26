@@ -22,15 +22,17 @@ export const JustifyAbout = styled(Container)`
   height: calc(100vh - 60px);
   justify-content: space-around;
   align-items: center;
-  
+  transition: all 0.4s ease-in-out;
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 450px) {
     &:hover{
       transform: scale(1);
+      height: 100vh;
+      
     }
   }
 `;
@@ -39,11 +41,12 @@ export const AboutText = styled.div`
   text-align: justify;
   border: 1px solid rgb(241, 243, 240);
   border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
+
   flex-direction: column;
   padding: 2rem;
   @media (max-width: 900px) {
     overflow-y: scroll;
+    margin: 2rem 0;
   }
 `;
 
@@ -70,6 +73,6 @@ export const TextAbout = styled.p`
   line-height: 2.5rem;
   color: white;
   padding: 0.2rem;
-  transition: border 0.7s;
+
 `;
 
