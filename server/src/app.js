@@ -4,6 +4,18 @@ const morgan = require("morgan");
 const cors = require("cors");
 const routes = require("./routes/index.js");
 const server = express();
+const https = require('https');
+const fs = require('fs');
+
+if(process.env.NODE_ENV === "production"){
+  let credentials = {
+    key : fs.readFileSync('ca-key.pem'),
+    cert : fs.readFileSync('ca-cert.pem')
+  }
+  const https = https.createServer(credentials,server).listen(process.env.HTTPS_PORT,function(){
+    console.log('escuchando en el puerto',process.env.HTTPS_PORT)
+  })
+};
 
 server.name = "API";
 
@@ -25,6 +37,8 @@ server.use((req, res, next) => {
 /* server.use(cors(corsOptions)); */
 
 server.use("/", routes);
+
+
 
 // Error catching endware.
 server.use((err, req, res, next) => {
