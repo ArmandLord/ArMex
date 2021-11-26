@@ -5,6 +5,7 @@ export const HallOfFameContainer = styled.div`
     background: rgb(156,18,56);
     background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     margin-bottom: 250px;
+    
 `
 
 export const BackgroundImageTop = styled.div`
@@ -64,6 +65,10 @@ export const BackgroundImageTop = styled.div`
         color: white;
         font-size: 3rem;
     }
+    @media (max-width: 450px) {
+  
+  padding: 1rem;
+}
 `
 
 export const JustifyHallOfFame = styled(Container)`

@@ -5,6 +5,10 @@ export const PlayerDetailContainer = styled.div`
     background: rgb(156,18,56);
     background: linear-gradient(130deg, rgba(156,18,56,1) 0%, rgba(0,0,0,1) 100%);
     margin-bottom: 250px;
+    @media (max-width: 450px) {
+  
+    padding: 1rem;
+}
 `
 
 export const JustifyPlayerDetail = styled(Container)`
