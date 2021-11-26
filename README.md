@@ -1,6 +1,6 @@
 # 16BIT Gamestore
 
-<img src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637886806/Futbol%20players/Home_zd3ecb.png'/>
+<img src='https://res.cloudinary.com/dy9tey0yi/image/upload/v1637886806/Futbol%20players/Home_zd3ecb.png' height='500px'/>
 
 ## 🤔 What is it?
 
