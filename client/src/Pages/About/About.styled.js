@@ -14,6 +14,14 @@ export const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 250px;
+  padding: 3rem;
+
+  @media (max-width: 450px) {
+  
+      padding: 0rem;
+    }
+
+
 `;
 
 
@@ -23,6 +31,7 @@ export const JustifyAbout = styled(Container)`
   justify-content: space-around;
   align-items: center;
   transition: all 0.4s ease-in-out;
+ 
   &:hover {
     cursor: pointer;
     /* transform: scale(1.05); */
@@ -34,6 +43,7 @@ export const JustifyAbout = styled(Container)`
       height: 100vh;
       
     }
+    
   }
 `;
 
@@ -41,9 +51,10 @@ export const AboutText = styled.div`
   text-align: justify;
   border: 1px solid rgb(241, 243, 240);
   border-radius: 1rem;
-
   flex-direction: column;
-  padding: 2rem;
+  padding:1.5rem;
+  
+
   @media (max-width: 900px) {
     overflow-y: scroll;
     margin: 2rem 0;
