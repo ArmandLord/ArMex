@@ -1,50 +1,49 @@
-import { GET_ALL_PLAYERS, GET_BY_ID, GET_FEAT, GET_TOP_TEN, RESET_DETAIL } from '../types'
-import axios from 'axios'
+import {  GET_BY_ID, GET_FEAT, RESET_DETAIL } from '../types'
+import { getAllPlayersHelper, getTopTenHelper } from './helper';
+import axios from "axios"
 
 export const getAllPlayers = () => {
-    return async function (dispatch) {
-      const data = await axios("/player");
-      return dispatch({
-        type: GET_ALL_PLAYERS,
-        payload: data.data,
-      });
-    };
+    return getAllPlayersHelper
   };
 
 export const getById = (id) => {
-    return async function (dispatch) {
-        const data = await axios(`/player/${id}`);
-        return dispatch({
-        type: GET_BY_ID,
-        payload: data.data,
-      });
-    };
+const getByIdHelper = async (dispatch) => { {
+    const data = await axios(`/player/${id}`);
+    return dispatch({
+    type: GET_BY_ID,
+    payload: data.data,
+  });
+};
+}
+    return getByIdHelper
   };
+
+  export const getFeat = (payload) => {
+    const getFeatHelper = async (dispatch) => { {
+      const data = await axios(`/player/search/${payload}`);
+      return dispatch({
+      type: GET_FEAT,
+      payload: data.data.players,
+    });
+    ;
+  }
+}
+    return  getFeatHelper
+    };
+  
+
+
+
 
 export const getTopTen = () => {
-    return async function (dispatch) {
-        const data = await axios('/player/topTen');
-        return dispatch({
-        type: GET_TOP_TEN,
-        payload: data.data,
-      });
-    };
+    return getTopTenHelper
   };
 
-export const getFeat = (payload) => {
-  return async function (dispatch) {
-    const data = await axios(`/player/search/${payload}`);
-        return dispatch({
-        type: GET_FEAT,
-        payload: data.data.players,
-      });
-    };
-  };
 
-  export const resetDetail = (payload) => {
+  export const resetDetail = () => {
     return {
         type: RESET_DETAIL,
-        // payload
+       
     }
 }
 
