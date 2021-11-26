@@ -4,6 +4,7 @@ import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 import dotenv from "dotenv";
+import { BrowserRouter as Router } from 'react-router-dom'
 dotenv.config();
 
 
@@ -12,8 +13,12 @@ axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
+   <React.StrictMode> 
+  
+    <Router>
+  <App />
+    </Router>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
