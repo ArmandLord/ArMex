@@ -41,10 +41,9 @@ export const getFeat = (payload) => {
     };
   };
 
-  export const resetDetail = (payload) => {
+  export const resetDetail = () => {
     return {
-        type: RESET_DETAIL,
-        // payload
+        type: RESET_DETAIL
     }
 }
 

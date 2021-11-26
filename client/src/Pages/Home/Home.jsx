@@ -9,12 +9,12 @@ import {
   JustifyHome,
   ContainerLoading,
 } from "./Home.styled";
-import { useLocation } from "react-router-dom";
+/* import { useLocation } from "react-router-dom"; */
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go'
 
 
 const Home = () => {
-  const { pathname } = useLocation();
+ /*  const { pathname } = useLocation(); */
   const dispatch = useDispatch();
   const players = useSelector((state) => state.renderingPlayers);
   const loading = useSelector((state) => state.loading);
@@ -55,7 +55,7 @@ const Home = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  });
 
   const resetOne = (a, b) => {
     setPage(a)

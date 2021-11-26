@@ -11,7 +11,7 @@ import { Navbar, Footer } from './components'
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      {/* <Router> */}
           <GlobalStyles />
           <Navbar />
           <Routes>
@@ -24,7 +24,7 @@ function App() {
               <Route path="*" element={<NotFound/>} />  
           </Routes> 
           <Footer />
-      </Router>
+      {/* </Router> */}
     </Provider>
   );
 }
